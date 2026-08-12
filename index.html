@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Maryam 🌸</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --pink:#ff4f91;
+    --pink2:#ff85b5;
+    --purple:#9b5de5;
+    --white:#fff;
+}
+
+body{
+    min-height:100vh;
+    overflow:hidden;
+    font-family:'DM Sans',sans-serif;
+    color:white;
+    background:#160b20;
+}
+
+/* Animated background */
+
+.background{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 15% 20%,rgba(255,79,145,.35),transparent 28%),
+        radial-gradient(circle at 85% 20%,rgba(155,93,229,.35),transparent 30%),
+        radial-gradient(circle at 50% 100%,rgba(255,133,181,.25),transparent 35%),
+        linear-gradient(135deg,#13091d,#27102e,#160b20);
+}
+
+.orb{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(60px);
+    opacity:.35;
+    animation:orbMove 12s ease-in-out infinite alternate;
+}
+
+.orb.one{
+    width:280px;
+    height:280px;
+    background:#ff4f91;
+    left:-100px;
+    top:10%;
+}
+
+.orb.two{
+    width:320px;
+    height:320px;
+    background:#9b5de5;
+    right:-100px;
+    bottom:5%;
+    animation-delay:2s;
+}
+
+@keyframes orbMove{
+    from{transform:translate(0,0) scale(1)}
+    to{transform:translate(80px,-60px) scale(1.25)}
+}
+
+/* Screens */
+
+.screen{
+    position:relative;
+    z-index:2;
+    min-height:100vh;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    padding:25px;
+}
+
+.screen.active{
+    display:flex;
+    animation:screenIn .8s ease;
+}
+
+@keyframes screenIn{
+    from{
+        opacity:0;
+        transform:scale(.96) translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:scale(1) translateY(0);
+    }
+}
+
+/* Glass card */
+
+.card{
+    width:min(850px,100%);
+    padding:55px 45px;
+    text-align:center;
+    border:1px solid rgba(255,255,255,.16);
+    border-radius:35px;
+    background:rgba(255,255,255,.07);
+    backdrop-filter:blur(25px);
+    box-shadow:
+        0 30px 100px rgba(0,0,0,.45),
+        inset 0 1px rgba(255,255,255,.15);
+}
+
+/* Typography */
+
+.small{
+    text-transform:uppercase;
+    letter-spacing:5px;
+    font-size:12px;
+    opacity:.65;
+    margin-bottom:20px;
+}
+
+h1{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(45px,8vw,82px);
+    line-height:1;
+    margin-bottom:22px;
+}
+
+h2{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(32px,6vw,55px);
+    margin-bottom:18px;
+}
+
+.gradient{
+    background:linear-gradient(90deg,#fff,#ff8fbd,#d9a7ff);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+p{
+    font-size:18px;
+    line-height:1.8;
+    opacity:.82;
+}
+
+/* Buttons */
+
+.btn{
+    border:0;
+    margin-top:32px;
+    padding:16px 30px;
+    border-radius:100px;
+    color:white;
+    background:linear-gradient(100deg,var(--pink),var(--purple));
+    font-size:16px;
+    font-weight:700;
+    cursor:pointer;
+    box-shadow:0 15px 35px rgba(255,79,145,.3);
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-4px) scale(1.03);
+    box-shadow:0 20px 45px rgba(255,79,145,.45);
+}
+
+/* Intro heart */
+
+.bigHeart{
+    font-size:90px;
+    display:inline-block;
+    animation:heartBeat 1.4s infinite;
+    margin-bottom:15px;
+}
+
+@keyframes heartBeat{
+    0%,100%{transform:scale(1)}
+    15%{transform:scale(1.18)}
+    30%{transform:scale(1)}
+}
+
+/* Reveal */
+
+.reveal{
+    min-height:130px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:25px 0;
+}
+
+.revealText{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(35px,7vw,75px);
+    font-weight:700;
+}
+
+.cursor{
+    display:inline-block;
+    width:3px;
+    height:55px;
+    background:#ff85b5;
+    margin-left:7px;
+    animation:blink .7s infinite;
+}
+
+@keyframes blink{
+    50%{opacity:0}
+}
+
+/* Celebration */
+
+.celebrationIcon{
+    font-size:90px;
+    animation:bounce 1.3s infinite;
+}
+
+@keyframes bounce{
+    50%{transform:translateY(-15px) rotate(4deg)}
+}
+
+/* Stats */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    margin-top:35px;
+}
+
+.stat{
+    padding:20px 10px;
+    border-radius:22px;
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.stat b{
+    display:block;
+    font-size:25px;
+    margin-bottom:5px;
+}
+
+.stat span{
+    font-size:12px;
+    opacity:.55;
+}
+
+/* Gift */
+
+.giftArea{
+    margin:25px auto;
+    width:180px;
+    height:180px;
+    position:relative;
+    cursor:pointer;
+}
+
+.gift{
+    position:absolute;
+    bottom:15px;
+    left:15px;
+    width:150px;
+    height:115px;
+    border-radius:10px;
+    background:linear-gradient(135deg,#ff4f91,#d52f72);
+    box-shadow:0 20px 40px rgba(0,0,0,.35);
+}
+
+.gift:before{
+    content:"";
+    position:absolute;
+    left:60px;
+    top:0;
+    width:30px;
+    height:115px;
+    background:#ffd1e3;
+}
+
+.lid{
+    position:absolute;
+    width:165px;
+    height:35px;
+    left:7px;
+    top:-25px;
+    border-radius:8px;
+    background:linear-gradient(135deg,#ff75aa,#df3678);
+    transition:1s;
+}
+
+.ribbon{
+    position:absolute;
+    width:30px;
+    height:35px;
+    left:67px;
+    top:-53px;
+    border:7px solid #ffd1e3;
+    border-radius:50%;
+}
+
+.giftArea.open .lid{
+    transform:translateY(-80px) rotate(-8deg);
+}
+
+.giftArea.open{
+    animation:giftOpen .7s ease;
+}
+
+@keyframes giftOpen{
+    50%{transform:scale(1.1)}
+}
+
+/* Letter */
+
+.letter{
+    margin-top:30px;
+    padding:30px;
+    border-radius:25px;
+    text-align:left;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.12);
+}
+
+.letterTitle{
+    font-family:'Playfair Display',serif;
+    font-size:27px;
+    margin-bottom:15px;
+}
+
+.signature{
+    margin-top:20px;
+    text-align:right;
+    font-family:'Playfair Display',serif;
+    font-size:22px;
+}
+
+/* Final */
+
+.finalHeart{
+    font-size:100px;
+    animation:heartBeat 1.3s infinite;
+}
+
+.finalName{
+    font-family:'Playfair Display',serif;
+    font-size:65px;
+    background:linear-gradient(90deg,#ff79ac,#d09aff);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+/* Floating particles */
+
+.particle{
+    position:fixed;
+    pointer-events:none;
+    z-index:10;
+    animation:particleUp linear forwards;
+}
+
+@keyframes particleUp{
+    to{
+        transform:translateY(-110vh) rotate(500deg);
+        opacity:0;
+    }
+}
+
+/* Confetti */
+
+.confetti{
+    position:fixed;
+    z-index:20;
+    top:-20px;
+    width:8px;
+    height:15px;
+    animation:confettiFall linear forwards;
+}
+
+@keyframes confettiFall{
+    to{
+        transform:translateY(110vh) rotate(800deg);
+        opacity:0;
+    }
+}
+
+/* Progress */
+
+.progress{
+    position:fixed;
+    z-index:30;
+    top:0;
+    left:0;
+    height:3px;
+    width:0%;
+    background:linear-gradient(90deg,#ff4f91,#d09aff);
+    transition:.7s;
+}
+
+/* Mobile */
+
+@media(max-width:600px){
+
+    .card{
+        padding:40px 22px;
+        border-radius:27px;
+    }
+
+    p{
+        font-size:16px;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .stat{
+        padding:13px;
+    }
+
+    .letter{
+        padding:22px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="background">
+    <div class="orb one"></div>
+    <div class="orb two"></div>
+</div>
+
+<div class="progress" id="progress"></div>
+
+
+<!-- SCREEN 1 -->
+
+<section class="screen active" id="screen1">
+
+<div class="card">
+
+    <div class="bigHeart">❤️</div>
+
+    <div class="small">A little surprise for</div>
+
+    <h1>
+        <span class="gradient">Maryam</span>
+    </h1>
+
+    <p>
+        I have a very important announcement...
+        <br>
+        But you have to press the button first. 👀
+    </p>
+
+    <button class="btn" onclick="nextScreen(2)">
+        Open The Surprise ✨
+    </button>
+
+</div>
+
+</section>
+
+
+<!-- SCREEN 2 -->
+
+<section class="screen" id="screen2">
+
+<div class="card">
+
+    <div class="small">Breaking News 🚨</div>
+
+    <h2>Maryam...</h2>
+
+    <div class="reveal">
+        <div class="revealText" id="typing"></div>
+        <div class="cursor"></div>
+    </div>
+
+    <p>
+        After surviving those annoying days...
+        <br>
+        the moment has finally arrived. 🌸
+    </p>
+
+    <button class="btn" onclick="nextScreen(3)">
+        Continue 🌷
+    </button>
+
+</div>
+
+</section>
+
+
+<!-- SCREEN 3 -->
+
+<section class="screen" id="screen3">
+
+<div class="card">
+
+    <div class="celebrationIcon">🎉</div>
+
+    <div class="small">Official Announcement</div>
+
+    <h1>
+        IT'S OVER! 💗
+    </h1>
+
+    <p>
+        <strong>Maryam's period days are officially finished.</strong>
+        <br><br>
+        Time to relax, feel comfortable,
+        and enjoy the days ahead. 🌸
+    </p>
+
+    <div class="stats">
+
+        <div class="stat">
+            <b>0</b>
+            <span>Period Days Left</span>
+        </div>
+
+        <div class="stat">
+            <b>100%</b>
+            <span>Celebration</span>
+        </div>
+
+        <div class="stat">
+            <b>∞</b>
+            <span>Love For Maryam</span>
+        </div>
+
+    </div>
+
+    <button class="btn" onclick="nextScreen(4)">
+        I Have A Gift 🎁
+    </button>
+
+</div>
+
+</section>
+
+
+<!-- SCREEN 4 -->
+
+<section class="screen" id="screen4">
+
+<div class="card">
+
+    <div class="small">Something special</div>
+
+    <h2>For You, Maryam 🎁</h2>
+
+    <p>
+        There's a little surprise waiting inside.
+        <br>
+        Tap the gift. 👇
+    </p>
+
+    <div class="giftArea" id="gift" onclick="openGift()">
+
+        <div class="gift">
+
+            <div class="lid"></div>
+            <div class="ribbon"></div>
+
+        </div>
+
+    </div>
+
+    <div id="giftText" style="display:none">
+
+        <h2 class="gradient">Surprise! 💕</h2>
+
+        <p>
+            You deserve some extra happiness today. 🌸
+        </p>
+
+        <button class="btn" onclick="nextScreen(5)">
+            Read My Message 💌
+        </button>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- SCREEN 5 -->
+
+<section class="screen" id="screen5">
+
+<div class="card">
+
+    <div class="small">A message from me</div>
+
+    <h2>Dear Maryam ❤️</h2>
+
+    <div class="letter">
+
+        <div class="letterTitle">
+            You made it through. 🌷
+        </div>
+
+        <p>
+            I know those days can be uncomfortable and
+            exhausting, so I'm genuinely happy that
+            you're finally done with them.
+            <br><br>
+
+            Now it's time to rest, smile, eat something
+            you love, and enjoy your peaceful days. 🥰
+            <br><br>
+
+            And most importantly...
+            don't forget that you have someone who
+            will always be cheering for you.
+            ❤️
+        </p>
+
+        <div class="signature">
+            Always here for you,<br>
+            ❤️ Your Favorite Person
+        </div>
+
+    </div>
+
+    <button class="btn" onclick="nextScreen(6)">
+        One Last Thing ✨
+    </button>
+
+</div>
+
+</section>
+
+
+<!-- SCREEN 6 -->
+
+<section class="screen" id="screen6">
+
+<div class="card">
+
+    <div class="finalHeart">💗</div>
+
+    <div class="small">The End</div>
+
+    <div class="finalName">Maryam</div>
+
+    <h2>You deserve to smile. 🌸</h2>
+
+    <p>
+        Periods ended.
+        <br>
+        Celebration started.
+        <br>
+        And my love for you?
+        <br>
+        <strong>Still unlimited. ❤️</strong>
+    </p>
+
+    <button class="btn" onclick="celebrateFinal()">
+        CELEBRATE 🎉
+    </button>
+
+</div>
+
+</section>
+
+
+<script>
+
+let current = 1;
+
+function nextScreen(number){
+
+    document.querySelectorAll(".screen").forEach(s=>{
+        s.classList.remove("active");
+    });
+
+    document.getElementById("screen"+number)
+        .classList.add("active");
+
+    current = number;
+
+    document.getElementById("progress").style.width =
+        ((number-1)/5)*100 + "%";
+
+    if(number === 2){
+        startTyping();
+    }
+
+    if(number === 3){
+        createConfetti(70);
+    }
+
+    if(number === 6){
+        createParticles();
+    }
+}
+
+
+/* Typing animation */
+
+function startTyping(){
+
+    const text = "YOUR PERIODS ARE OVER! 🌸";
+
+    const element = document.getElementById("typing");
+
+    element.innerHTML = "";
+
+    let i = 0;
+
+    const timer = setInterval(()=>{
+
+        element.innerHTML += text.charAt(i);
+
+        i++;
+
+        if(i >= text.length){
+            clearInterval(timer);
+        }
+
+    },65);
+}
+
+
+/* Gift */
+
+function openGift(){
+
+    const gift = document.getElementById("gift");
+
+    gift.classList.add("open");
+
+    setTimeout(()=>{
+
+        document.getElementById("giftText")
+            .style.display="block";
+
+        createConfetti(50);
+
+    },700);
+}
+
+
+/* Confetti */
+
+function createConfetti(amount){
+
+    const symbols = ["💗","🌸","✨","🎉","💕","🌷"];
+
+    for(let i=0;i<amount;i++){
+
+        const c=document.createElement("div");
+
+        c.className="confetti";
+
+        c.innerHTML =
+            symbols[Math.floor(Math.random()*symbols.length)];
+
+        c.style.left=Math.random()*100+"vw";
+
+        c.style.fontSize =
+            (10+Math.random()*18)+"px";
+
+        c.style.animationDuration =
+            (2+Math.random()*4)+"s";
+
+        document.body.appendChild(c);
+
+        setTimeout(()=>{
+            c.remove();
+        },6000);
+    }
+}
+
+
+/* Floating hearts */
+
+function createParticles(){
+
+    const symbols=["❤️","💕","💗","🌸","✨","🌷"];
+
+    for(let i=0;i<50;i++){
+
+        const p=document.createElement("div");
+
+        p.className="particle";
+
+        p.innerHTML =
+            symbols[Math.floor(Math.random()*symbols.length)];
+
+        p.style.left=Math.random()*100+"vw";
+
+        p.style.bottom="-30px";
+
+        p.style.fontSize =
+            (15+Math.random()*25)+"px";
+
+        p.style.animationDuration =
+            (3+Math.random()*5)+"s";
+
+        document.body.appendChild(p);
+
+        setTimeout(()=>{
+            p.remove();
+        },8000);
+    }
+}
+
+
+/* Final celebration */
+
+function celebrateFinal(){
+
+    createConfetti(150);
+    createParticles();
+
+    document.querySelector(".finalHeart").innerHTML="💖";
+
+    setTimeout(()=>{
+        alert("Maryam ❤️ You deserve all the happiness in the world! 🌸");
+    },1200);
+}
+
+</script>
+
+</body>
+</html>
